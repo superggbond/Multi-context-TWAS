@@ -1,4 +1,4 @@
-# sample bash scripts to run S-PrediXcan
+# sample scripts to run S-PrediXcan
 ~/MetaXcan/software/SPrediXcan.py \
 --keep_non_rsid \
 --model_db_path /net/psoriasis/psorgenom/haihan/multi_TWAS/db_files/IFNa.db \

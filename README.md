@@ -62,7 +62,7 @@ Where each row is a gene's association result:
 More details can be found [here](https://github.com/hakyimlab/MetaXcan).
 
 ## 4. Perform multi-context TWAS
-After the S-PrediXcan results are generated for all the conditions, S-MulTiXcan.sh can be applied to perform the multi-context TWAS, following the sample commands listed in [run_SMulTiXcan.sh](https://github.com/superggbond/Multi-context-TWAS/blob/main/run_SMulTiXcan.sh).
+After the S-PrediXcan results are generated for all the conditions, S-MulTiXcan can be applied to perform the multi-context TWAS, following the sample commands listed in [run_SMulTiXcan.sh](https://github.com/superggbond/Multi-context-TWAS/blob/main/run_SMulTiXcan.sh).
 
 The output will be saved as a tab-separated text file, and here is an example loaded in R:
 ```r

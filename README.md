@@ -44,21 +44,20 @@ The output will be saved as a .csv file, and here is an example loaded in R:
 6             187
 ```
 Where each row is a gene's association result:
-* `gene`: a gene's id: as listed in the Tissue Transcriptome model.
-Ensemble Id for most gene model releases. Can also be a intron's id for splicing model releases.
-* `gene_name`: gene name as listed by the Transcriptome Model, typically HUGO for a gene. It can also be an intron's id.
-* `zscore`: S-PrediXcan's association result for the gene, typically HUGO for a gene.
+* `gene`: a gene's id or name used in the GReX model
+* `gene_name`: gene name as listed in the GReX model
+* `zscore`: S-PrediXcan's association result for the gene
 * `effect_size`: S-PrediXcan's association effect size for the gene. Can only be computed when `beta` from the GWAS is used.
-* `pvalue`: P-value of the aforementioned statistic.
-* `pred_perf_r2`: (cross-validated) R2 of tissue model's correlation to gene's measured transcriptome (prediction performance). Not all model families have this (e.g. MASHR).
-* `pred_perf_pval`: pval of tissue model's correlation to gene's measured transcriptome (prediction performance). Not all model families have this (e.g. MASHR).
-* `pred_perf_qval`: qval of tissue model's correlation to gene's measured transcriptome (prediction performance). Not all model families have this (e.g. MASHR).
+* `pvalue`: P-value of the aforementioned statistic
+* `pred_perf_r2`: (cross-validated) R2 of tissue model's correlation to gene's measured transcriptome (prediction performance). It is not applicable for our BSLMM model.
+* `pred_perf_pval`: pval of tissue model's correlation to gene's measured transcriptome (prediction performance). It is not applicable for our BSLMM model.
+* `pred_perf_qval`: qval of tissue model's correlation to gene's measured transcriptome (prediction performance). It is not applicable for our BSLMM model.
 * `n_snps_used`: number of snps from GWAS that got used in S-PrediXcan analysis
-* `n_snps_in_cov`: number of snps in the covariance matrix
-* `n_snps_in_model`: number of snps in the model
+* `n_snps_in_cov`: number of snps in the LD reference matrix
+* `n_snps_in_model`: number of snps in the GReX model
 * `var_g`: variance of the gene expression, calculated as `W' * G * W`
 (where `W` is the vector of SNP weights in a gene's model,
-`W'` is its transpose, and `G` is the covariance matrix)
+`W'` is its transpose, and `G` is the LD reference matrix)
 
 ## 3. Multi-context TWAS
 After the S-PrediXcan results are generated for all the conditions, S-MulTiXcan.sh can be applied to perform the multi-context TWAS, following the sample commands listed in [run_SMulTiXcan.sh](https://github.com/superggbond/Multi-context-TWAS/blob/main/run_SMulTiXcan.sh).

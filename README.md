@@ -62,3 +62,28 @@ Where each row is a gene's association result:
 ## 3. Multi-context TWAS
 After the S-PrediXcan results are generated for all the conditions, S-MulTiXcan.sh can be applied to perform the multi-context TWAS, following the sample commands listed in [run_SMulTiXcan.sh](https://github.com/superggbond/Multi-context-TWAS/blob/main/run_SMulTiXcan.sh).
 
+The output will be saved as a .csv file, and here is an example loaded in R:
+```r
+> head(res)
+      gene gene_name       pvalue n n_indep     p_i_best  t_i_best  p_i_worst
+1   NMNAT1    NMNAT1 6.436820e-28 8       6 1.248346e-18       IL4 0.01620177
+2      FLG       FLG 6.113827e-24 8       5 1.066203e-20      NHEK 0.97930403
+3 CTNNBIP1  CTNNBIP1 6.051845e-23 8       5 3.489429e-04 IL17ATNFa 0.24139310
+4  KRT8P21   KRT8P21 1.503697e-21 8       4 2.367278e-14      IFNg 0.91871506
+5   SDHDP6    SDHDP6 2.921108e-18 8       5 2.936515e-03       IL4 0.69308320
+6    UBE4B     UBE4B 6.384423e-17 8       3 9.171576e-08      IFNa 0.77020149
+  t_i_worst eigen_max    eigen_min eigen_min_kept     z_min    z_max     z_mean
+1      IL13  3.153889 0.0075440227      0.1339378 -5.347993 8.810279  1.0380492
+2      IFNg  4.244840 0.0161399116      0.2241544 -9.329252 2.465591 -1.6628579
+3      IFNa  3.950087 0.0194258338      0.1373150 -3.569240 3.575962  0.1951729
+4      IFNa  5.635723 0.0003576079      0.2489683 -7.628920 4.844059 -1.4727387
+5      NHEK  3.042455 0.0005394716      0.1887045 -2.974307 2.623469  0.6251076
+6     IL17A  6.278585 0.0035381646      0.2330906 -2.795889 5.342416  1.1213563
+      z_sd tmi status
+1 5.493796   6      0
+2 3.961859   5      0
+3 2.532445   5      0
+4 3.743329   4      0
+5 1.925624   5      0
+6 2.497475   3      0
+```

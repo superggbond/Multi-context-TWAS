@@ -62,7 +62,7 @@ Where each row is a gene's association result:
 ## 3. Multi-context TWAS
 After the S-PrediXcan results are generated for all the conditions, S-MulTiXcan.sh can be applied to perform the multi-context TWAS, following the sample commands listed in [run_SMulTiXcan.sh](https://github.com/superggbond/Multi-context-TWAS/blob/main/run_SMulTiXcan.sh).
 
-The output will be saved as a .csv file, and here is an example loaded in R:
+The output will be saved as a tab-separated text file, and here is an example loaded in R:
 ```r
 > head(res)
       gene gene_name       pvalue n n_indep     p_i_best  t_i_best  p_i_worst
@@ -87,3 +87,26 @@ The output will be saved as a .csv file, and here is an example loaded in R:
 5 1.925624   5      0
 6 2.497475   3      0
 ```
+Where each row is a gene's association result after leveraging the information across multiple contexts:
+* `gene`: a gene's id or name used in the GReX model
+* `gene_name`: gene name as listed in the GReX model
+* `pvalue`: p-value of S-MultiXcan association
+* `n`: number of "tissues"/"conditions" available for this gene
+* `n_indep`: number of independent components of variation kept among the tissues' predictions. (Synthetic independent tissues)
+* `p_i_best`: best p-value of single-tissue S-PrediXcan association.
+* `t_i_best`: name of best single-tissue S-PrediXcan association.
+* `p_i_worst`: worst p-value of single-tissue S-PrediXcan association.
+* `t_i_worst`: name of worst single-tissue S-PrediXcan association.
+* `eigen_max`: In the SVD decomposition of predicted expression correlation: eigenvalue (variance explained) of the top independent component
+* `eigen_min`: In the SVD decomposition of predicted expression correlation: eigenvalue (variance explained) of the last independent component
+* `eigen_min_kept`: In the SVD decomposition of predicted expression correlation: eigenvalue (variance explained) of the smalles independent component that was kept.
+* `z_min`: minimum z-score among single-tissue S-Predican associations.
+* `z_max`: maximum z-score among single-tissue S-Predican associations.
+* `z_mean`: mean z-score among single-tissue S-Predican associations.
+* `z_sd`: standard deviation of the mean z-score among single-tissue S-Predican associations.
+* `tmi`: trace of `T * T'`, 
+where `T`is correlation of predicted expression levels for different tissues 
+multiplied by its SVD pseudo-inverse. 
+It is an estimate for number of indepent components of variation in predicted expresison across tissues (typically close to `n_indep`)
+* `status`: If there was any error in the computation, it is stated here
+

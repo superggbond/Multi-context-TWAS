@@ -15,4 +15,4 @@
 --cutoff_condition_number 30 \
 --verbosity 7 \
 --throw \
---output chr$chr.csv
+--output chr$chr.out

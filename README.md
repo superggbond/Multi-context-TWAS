@@ -59,6 +59,8 @@ Where each row is a gene's association result:
 (where `W` is the vector of SNP weights in a gene's model,
 `W'` is its transpose, and `G` is the LD reference matrix)
 
+More details can be found [here](https://github.com/hakyimlab/MetaXcan).
+
 ## 3. Multi-context TWAS
 After the S-PrediXcan results are generated for all the conditions, S-MulTiXcan.sh can be applied to perform the multi-context TWAS, following the sample commands listed in [run_SMulTiXcan.sh](https://github.com/superggbond/Multi-context-TWAS/blob/main/run_SMulTiXcan.sh).
 
@@ -109,4 +111,6 @@ where `T`is correlation of predicted expression levels for different tissues
 multiplied by its SVD pseudo-inverse. 
 It is an estimate for number of indepent components of variation in predicted expresison across tissues (typically close to `n_indep`)
 * `status`: If there was any error in the computation, it is stated here
+
+More details can be found [here](https://github.com/hakyimlab/MetaXcan).
 

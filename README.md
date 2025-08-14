@@ -16,8 +16,8 @@ Sample scripts we used to apply BSLMM are provided as [run_bslmm.R](https://gith
 ## 3. Single-context TWAS
 In order to conduct the multi-context TWAS, we first need to perform the single-context TWAS on each condition using S-PrediXcan. In addition to the GWAS summary statistics, S-PrediXcan also requires the inputs of cis-SNP weights as a .db file and the LD reference file. Sample scripts to generate the cis-SNP weights .db file are provided as [prep_dbfile.R](https://github.com/superggbond/Multi-context-TWAS/blob/main/prep_dbfile.R), and the Sample scripts to generate the LD reference file are provided as [prep_LDref.R](https://github.com/superggbond/Multi-context-TWAS/blob/main/prep_LDref.R).
 
-Then S-PrediXcan can be applied using the commands listed in [run_SPrediXcan.sh](https://github.com/superggbond/Multi-context-TWAS/blob/main/run_SPrediXcan.sh).
+Then S-PrediXcan can be applied following the sample commands listed in [run_SPrediXcan.sh](https://github.com/superggbond/Multi-context-TWAS/blob/main/run_SPrediXcan.sh).
 
 ## 3. Multi-context TWAS
-After the S-PrediXcan results are generated for all the conditions, S-MulTiXcan.sh can be applied to perform the multi-context TWAS, using the commands listed in [run_SMulTiXcan.sh](https://github.com/superggbond/Multi-context-TWAS/blob/main/run_SMulTiXcan.sh).
+After the S-PrediXcan results are generated for all the conditions, S-MulTiXcan.sh can be applied to perform the multi-context TWAS, following the sample commands listed in [run_SMulTiXcan.sh](https://github.com/superggbond/Multi-context-TWAS/blob/main/run_SMulTiXcan.sh).
 

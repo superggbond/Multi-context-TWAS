@@ -9,4 +9,4 @@ Zhang, H., Patrick, M. T., Sarkar, M. K., ... & Tsoi, L. C. (2025). Multi-cytoki
 We performed a multi-context marginal TWAS analyses on skin disorders. The following sections will go through the workflow of the main analysis step-by-step, using our multi-cytokine based TWAS as an example.
 
 ## 2. GReX modeling using BSLMM
-For the standard marginal TWAS, the genetically regulated gene expression (GReX) level is reuqired for each gene. To predict GReX for a gene, a fixed window of cis-SNPs (usually +-100kb or +-500kb of a gene's transcription starting site) are used, and the weight for each cis-SNP is required to pair with GWAS summary statistics of a disorder. In our case, we applied [BSLMM] (https://github.com/genetics-statistics/GEMMA)
+For the standard marginal TWAS, the genetically regulated gene expression (GReX) level is reuqired for each gene. To predict GReX for a gene, a fixed window of cis-SNPs (usually +-100kb or +-500kb of a gene's transcription starting site) are used, and the weight for each cis-SNP is required to pair with GWAS summary statistics of a disorder. In our case, we applied [BSLMM](https://github.com/genetics-statistics/GEMMA)

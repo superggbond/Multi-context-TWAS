@@ -15,13 +15,13 @@ Sample scripts we used to apply BSLMM are provided as [run_bslmm.R](https://gith
 
 BSLMM requires two input files:
 
-(1). A .txt or .txt.gz file containing genotype information. The first column is SNP id, the second and third columns are allele types with minor allele first, and the remaining columns are the posterior/imputed mean genotypes of diﬀerent individuals numbered between 0 and 2. An example mean genotype file with two SNPs and three individuals is as follows:
+(1). a .txt or .txt.gz file containing genotype information. The first column is SNP id, the second and third columns are allele types with minor allele first, and the remaining columns are the posterior/imputed mean genotypes of diﬀerent individuals numbered between 0 and 2. An example mean genotype file with two SNPs and three individuals is as follows:
 ```txt
 rs1, A, T, 0.02, 0.80, 1.50
 rs2, G, C, 0.98, 0.04, 1.00
 ```
 
-(2). A .txt file containing phenotype information. Each line is a number indicating the phenotype value for each individual in turn, in the same order as in the mean genotype file. Notice that only numeric values are allowed and characters will not be recognized by the software. Missing phenotype information is denoted as NA. The number of rows should be equal to the number of individuals in the mean genotype file. An example phenotype file with five individuals and one phenotype is as follows:
+(2). a .txt file containing phenotype information. Each line is a number indicating the phenotype value for each individual in turn, in the same order as in the mean genotype file. Notice that only numeric values are allowed and characters will not be recognized by the software. Missing phenotype information is denoted as NA. The number of rows should be equal to the number of individuals in the mean genotype file. An example phenotype file with five individuals and one phenotype is as follows:
 ```txt
 1.2
 NA
@@ -44,7 +44,7 @@ For each SNP, the final estimated effect size can be calculated as: alpha+beta*g
 ## 2.2 GReX modeling using SuSiE (alternative method)
 SuSiE (Sum of Single Effects) is one of the most popular models for sparse multiple regression. It can also be applied for GReX modeling. 
 
-SuSiE model can be implemented by the R package [susieR](https://github.com/stephenslab/susieR). It also requires two input objects in R: (1). A R matrix for genotypes. (2). A R vector for phenotype. And the SuSiE method can be applied in R as:
+SuSiE model can be implemented by the R package [susieR](https://github.com/stephenslab/susieR). It also requires two input objects: (1). a R matrix for genotypes; (2). a R vector for phenotype. And the SuSiE method can be applied in R as:
 ```R
 library(susieR)
 

@@ -13,7 +13,8 @@ For the standard marginal TWAS, the genetically regulated gene expression (GReX)
 
 Sample scripts we used to apply BSLMM are provided as [run_bslmm.R](https://github.com/superggbond/Multi-context-TWAS/blob/main/run_bslmm.R)
 
-BSLMM requires two input files:\n
+BSLMM requires two input files:
+
 a.
 
 ## 3. Perform single-context TWAS

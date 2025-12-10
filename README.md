@@ -41,15 +41,18 @@ chr rs ps n_miss alpha beta gamma
 ```
 For each SNP, the final estimated effect size can be calculated as: alpha+beta*gamma.
 
-
-
-
 ## 2.2 GReX modeling using SuSiE (alternative method)
 SuSiE (Sum of Single Effects) is one of the most popular models for sparse multiple regression. It can also be applied for GReX modeling. 
 
-SuSiE model can be implemented by the R package [susieR](https://github.com/stephenslab/susieR)
+SuSiE model can be implemented by the R package [susieR](https://github.com/stephenslab/susieR). It also requires two input objects in R: (1). A R matrix for genotypes. (2). A R vector for phenotype. And the SuSiE method can be applied in R as:
+```R
+library(susieR)
 
-
+# apply SuSiE method for GReX modeling: X is the genotype matrix; y is the phenotype vector.
+fit <- susie(X, y)
+# calculate posterior mean effect sizes of SNPs
+beta_hat <- colSums(fit$alpha * fit$mu)
+```
 
 ## 3. Perform single-context TWAS
 In order to conduct the multi-context TWAS, we first need to perform the single-context TWAS on each condition using S-PrediXcan. In addition to the GWAS summary statistics, S-PrediXcan also requires the inputs of cis-SNP weights as a .db file and the LD reference file. Sample scripts to generate the cis-SNP weights .db file are provided as [prep_dbfile.R](https://github.com/superggbond/Multi-context-TWAS/blob/main/prep_dbfile.R), and the sample scripts to generate the LD reference file are provided as [prep_LDref.R](https://github.com/superggbond/Multi-context-TWAS/blob/main/prep_LDref.R).

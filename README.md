@@ -30,6 +30,20 @@ NA
 3.3
 ```
 
+The BSLMM output file [prefix].param.txt contains the posterior mean estimates for the eﬀect size parameters for each SNP. An example file with a few SNPs is shown below:
+```txt
+chr rs ps n_miss alpha beta gamma
+1 rs3683945 3197400 0 -7.314495e-05 0.000000e+00 0.000000e+00
+1 rs3707673 3407393 0 -7.314495e-05 0.000000e+00 0.000000e+00
+1 rs6269442 3492195 0 -3.412974e-04 0.000000e+00 0.000000e+00
+1 rs6336442 3580634 0 -8.051198e-05 0.000000e+00 0.000000e+00
+1 rs13475700 4098402 0 -1.200246e-03 0.000000e+00 0.000000e+00
+```
+For each SNP, the final estimated effect size can be calculated as: alpha+beta*gamma.
+
+
+
+
 ## 2.2 GReX modeling using SuSiE (alternative method)
 SuSiE (Sum of Single Effects) is one of the most popular models for sparse multiple regression. It can also be applied for GReX modeling. 
 

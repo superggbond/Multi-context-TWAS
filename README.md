@@ -15,10 +15,19 @@ Sample scripts we used to apply BSLMM are provided as [run_bslmm.R](https://gith
 
 BSLMM requires two input files:
 
-a. A .txt or .txt.gz file contains genotype information. The first column is SNP id, the second and third columns are allele types with minor allele first, and the remaining columns are the posterior/imputed mean genotypes of diﬀerent individuals numbered between 0 and 2. An example mean genotype file with two SNPs and three individuals is as follows:
+(1). A .txt or .txt.gz file containing genotype information. The first column is SNP id, the second and third columns are allele types with minor allele first, and the remaining columns are the posterior/imputed mean genotypes of diﬀerent individuals numbered between 0 and 2. An example mean genotype file with two SNPs and three individuals is as follows:
 ```txt
 rs1, A, T, 0.02, 0.80, 1.50
 rs2, G, C, 0.98, 0.04, 1.00
+```
+
+(2). A .txt file containing phenotype information. Each line is a number indicating the phenotype value for each individual in turn, in the same order as in the mean genotype file. Notice that only numeric values are allowed and characters will not be recognized by the software. Missing phenotype information is denoted as NA. The number of rows should be equal to the number of individuals in the mean genotype file. An example phenotype file with five individuals and one phenotype is as follows:
+```txt
+1.2
+NA
+2.7
+-0.2
+3.3
 ```
 
 ## 3. Perform single-context TWAS

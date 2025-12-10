@@ -15,7 +15,11 @@ Sample scripts we used to apply BSLMM are provided as [run_bslmm.R](https://gith
 
 BSLMM requires two input files:
 
-a.
+a. A .txt or .txt.gz file contains genotype information. The first column is SNP id, the second and third columns are allele types with minor allele first, and the remaining columns are the posterior/imputed mean genotypes of diﬀerent individuals numbered between 0 and 2. An example mean genotype file with two SNPs and three individuals is as follows:
+```txt
+rs1, A, T, 0.02, 0.80, 1.50
+rs2, G, C, 0.98, 0.04, 1.00
+```
 
 ## 3. Perform single-context TWAS
 In order to conduct the multi-context TWAS, we first need to perform the single-context TWAS on each condition using S-PrediXcan. In addition to the GWAS summary statistics, S-PrediXcan also requires the inputs of cis-SNP weights as a .db file and the LD reference file. Sample scripts to generate the cis-SNP weights .db file are provided as [prep_dbfile.R](https://github.com/superggbond/Multi-context-TWAS/blob/main/prep_dbfile.R), and the sample scripts to generate the LD reference file are provided as [prep_LDref.R](https://github.com/superggbond/Multi-context-TWAS/blob/main/prep_LDref.R).

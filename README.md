@@ -33,7 +33,7 @@ NA
 ## 2.2 GReX modeling using SuSiE (alternative method)
 SuSiE (Sum of Single Effects) is one of the most popular models for sparse multiple regression. It can also be applied for GReX modeling. 
 
-SuSiE model can be implemented by the R package ```txt susieR ```.
+SuSiE model can be implemented by the R package [susieR](https://github.com/stephenslab/susieR)
 
 
 
